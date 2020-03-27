@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="JobProject.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="CSS/w3.css" rel="stylesheet" type="text/css"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <header class="w3-container w3-light-grey">
+                <h1 class="w3-jumbo">Jop Top!</h1>
+                <p class="w3-xxlarge">Find your oppotunies, create your future!!</p>
+            </header>
+            <div>
+                <ul class="w3-navbar w3-blue w3-large">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Your Profile</a></li>
+                    <li><a href="#">Search Candidates</a></li>
+                    <li><a href="#">Post Job</a></li>
+                    <li><a href="#">About us</a></li>
+                </ul>
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <footer class ="w3-container w3-light-grey">
+                <br /> <br />
+                <p style ="text-align:center">
+                    @2020
+                </p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>

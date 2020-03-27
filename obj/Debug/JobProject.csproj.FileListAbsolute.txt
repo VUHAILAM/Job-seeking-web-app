@@ -1,0 +1,6 @@
+D:\HAI_LAM\PRN202\JobProject\bin\JobProject.dll.config
+D:\HAI_LAM\PRN202\JobProject\bin\JobProject.dll
+D:\HAI_LAM\PRN202\JobProject\bin\JobProject.pdb
+D:\HAI_LAM\PRN202\JobProject\obj\Debug\JobProject.csprojAssemblyReference.cache
+D:\HAI_LAM\PRN202\JobProject\obj\Debug\JobProject.dll
+D:\HAI_LAM\PRN202\JobProject\obj\Debug\JobProject.pdb
