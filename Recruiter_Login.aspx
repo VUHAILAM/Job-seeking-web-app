@@ -17,7 +17,7 @@
             </header>
             <div>
                 <ul class="w3-navbar w3-blue w3-large">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="Home.aspx">Home</a></li>
                     <li><a href="#">Your Profile</a></li>
                     <li><a href="#">Search Candidates</a></li>
                     <li><a href="#">Post Job</a></li>

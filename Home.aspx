@@ -5,15 +5,15 @@
 <div class="w3-row-padding">
     <div class ="w3-quarter">
         <p></p>
-        <asp:Image ID="Image1" runat="server" Image=""/>
+        <a href="Recruiter_Login.aspx"><asp:Image ID="Image1" runat="server" Image=""/></a>
     </div>
     <div class ="w3-half">
         <p></p>
-        <asp:Image ID="Image2" runat="server" Image=""/>
+        <a href=""><asp:Image ID="Image2" runat="server" Image=""/></a>
     </div>
     <div class ="w3-quarter">
         <p></p>
-        <asp:Image ID="Image3" runat="server" Image=""/>
+       <a href=""><asp:Image ID="Image3" runat="server" Image=""/></a>
     </div>
 </div>
 </asp:Content>

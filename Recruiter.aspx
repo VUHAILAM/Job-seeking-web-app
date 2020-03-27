@@ -9,7 +9,7 @@
     <asp:Label ID="Label1" runat="server" Text="Label" Font-Bold="True" Font-Italic="True"></asp:Label></h2>
             </td>
             <td>
-                <asp:Button ID="Button1" runat="server" Text="Log out" />
+                <asp:LinkButton ID="LinkButton1" runat="server">Log out</asp:LinkButton>
             </td>
         </tr>
     </table>
