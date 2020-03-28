@@ -14,6 +14,15 @@
         </tr>
     </table>
     <div>
-        <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px"></asp:DetailsView>
+        <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="225px" AutoGenerateRows="false">
+            <Fields>
+                <asp:BoundField DataField="company_name" HeaderText ="Company name"/>
+                <asp:BoundField DataField="contact_person" HeaderText ="Contact person"/>
+                <asp:BoundField DataField="company_contact" HeaderText ="Company contact"/>
+                <asp:BoundField DataField="company_addrs" HeaderText ="Company address"/>
+                <asp:BoundField DataField="company_email" HeaderText ="Company email"/>
+                <asp:BoundField DataField="company_details" HeaderText ="Company Details"/>
+            </Fields>
+        </asp:DetailsView>
     </div>
 </asp:Content>
