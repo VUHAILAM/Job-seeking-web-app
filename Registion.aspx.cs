@@ -42,7 +42,7 @@ namespace JobProject
             {
                 Profile1.executeData(TextBox1.Text);
             }
-            Response.Redirect("~/Recruiter_Login.aspx");
+            Response.Redirect("~/Login.aspx");
         }
 
         protected void CheckBox1_CheckedChanged(object sender, EventArgs e)

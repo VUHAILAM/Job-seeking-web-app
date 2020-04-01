@@ -21,9 +21,9 @@
                 <ul class="w3-navbar w3-blue w3-large">
                     <li><a href="Home.aspx">Home</a></li>
                     <li><a href="#">Your Profile</a></li>
-                    <li><a href="#">Search Candidates</a></li>
-                    <li><a href="#">Post Job</a></li>
-                    <li><a href="#">About us</a></li>
+                    <li><a href="Search_Job.aspx">Search Candidates</a></li>
+                    <li><a href="Post_job.aspx">Post Job</a></li>
+                    <li><a href="Login.aspx">Log In</a></li>
                 </ul>
             </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

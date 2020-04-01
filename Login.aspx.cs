@@ -51,7 +51,7 @@ namespace JobProject
                         int cid = 0;
                         cid = getCid(Username);
                         Session.Add("Cid", cid);
-                        Response.Redirect("~/Default.aspx");
+                        Response.Redirect("~/Candidate.aspx");
                     }
                 } else
                 {

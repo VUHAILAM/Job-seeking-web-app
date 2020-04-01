@@ -41,3 +41,81 @@ create table candidate (
 	contact_no numeric(10,10),
 	email_id nvarchar(300)
 )
+
+create table category
+(
+category_id  int primary key identity(1,1),
+category_name     nchar(15),
+)
+
+create table area
+(
+area_id  int  primary key identity(1,1),
+category_id    int,
+area_name     nchar(15)
+)
+
+create table package (
+	package_id int primary key identity(1,1),
+	package_cost nvarchar(10),
+	no_jobs numeric
+)
+
+create table company_package (
+	comp_package_id int primary key identity(1,1),
+	company_id int,
+	package_id int
+)
+
+create table job_applied(
+	applied_id int primary key,
+	candidate_id int,
+	jobpost_id int,
+	applied_date datetime
+)
+
+create table job_post (
+	jobpost_id int primary key identity(1,1),
+	company_id int,
+	job_title nvarchar(300),
+	area_id int,
+	post nvarchar(300),
+	no_vacancy numeric,
+	startdate datetime,
+	end_date datetime,
+	expr_req nvarchar(300),
+	skillis_req nvarchar(300),
+	edu_req nvarchar(300),
+	basic_req nvarchar(300),
+	salary_min numeric(18,0),
+	salary_max numeric(18,0)
+)
+
+create table post(
+	post_id int primary key identity(1,1),
+	area_id int,
+	post_name nvarchar(300)
+)
+
+create table saved_candidate (
+	saved_id int primary key,
+	candidate_id int,
+	jobpost_id int
+)
+
+create table saved_job (
+	saved_job_id int primary key identity(1,1),
+	candidate_id int,
+	jobpost_id int
+)
+
+create table selected_candidate (
+	selected_id int primary key,
+	candidate_id int,
+	jobpost_id int
+)
+alter table job_post alter column post 
+
+select * from company
+
+select * from account

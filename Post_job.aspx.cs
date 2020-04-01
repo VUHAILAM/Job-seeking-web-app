@@ -10,15 +10,14 @@ using System.Web.UI.WebControls;
 
 namespace JobProject
 {
-    public partial class Search_Job : System.Web.UI.Page
+    public partial class Post_job : System.Web.UI.Page
     {
         string connStr = WebConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString.ToString();
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
-             loadCategory();
-            loadArea(DropDownList1.SelectedValue);
-            loadData();
+            loadCategory();
+            loadArea();
         }
         public void loadCategory()
         {
@@ -38,12 +37,12 @@ namespace JobProject
             con.Close();
         }
 
-        public void loadArea(string id)
+        public void loadArea()
         {
             SqlConnection con = new SqlConnection(connStr);
             con.Open();
-            string query = "select * from Area where Area.category_id = '" + DropDownList1.SelectedValue + "'";
-            SqlDataAdapter adp = new SqlDataAdapter(query, con);
+            string query = "select * from Area where Area.category_id = '"+ DropDownList1.SelectedValue + "'";
+            SqlDataAdapter  adp = new SqlDataAdapter(query, con);
             DataSet ds = new DataSet();
             adp.Fill(ds);
 
@@ -56,23 +55,24 @@ namespace JobProject
             con.Close();
 
         }
-        public void loadData()
+        protected void Button1_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(connStr);
             con.Open();
-            string sql = "select job_title, company_name, post, skillis_req, edu_req, basic_req from job_post, company" +
-                " where job_post.company_id = company.company_id";
-            SqlDataAdapter ad = new SqlDataAdapter(sql, con);
-            DataTable tb = new DataTable();
-            ad.Fill(tb);
-            GridView1.DataSource = tb;
-            GridView1.DataBind();
+            string sql = "insert into job_post(job_title, area_id, post, skillis_req, edu_req, basic_req) values ('"
+                +TextBox1.Text+"','" + DropDownList2.SelectedValue + "','" 
+                + TextBox2.Text + "','" +TextBox3.Text+"','"+DropDownList3.SelectedValue+"','"+TextBox4.Text+"')";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            if(cmd.ExecuteNonQuery()>0)
+            {
+                Response.Write("<script> alert('Record saved Successfuly')</script>");
+            }
             con.Close();
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            loadArea(DropDownList1.SelectedValue);
+            loadArea();
         }
     }
 }

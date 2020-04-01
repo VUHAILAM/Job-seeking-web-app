@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Recruiter_Login.aspx.cs" Inherits="JobProject.Recruiter_Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="JobProject.Recruiter_Login" %>
 
 <!DOCTYPE html>
 
@@ -29,7 +29,7 @@
                     <p></p>
                 </div>
                 <div class="w3-half">
-                    <p><strong>Recruiter Login</strong></p>
+                    <p><strong>Login</strong></p>
                     <div class="w3-form w3-card-4">
                         <h2>Sign In</h2>
                         <div class="w3-group">
@@ -51,7 +51,7 @@
                     <div>
                         <div class="w3-group">
                             <label>New user!</label>
-                            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="">Registration</asp:HyperLink>
+                            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Registion.aspx">Registration</asp:HyperLink>
                         </div>
                     </div>
                 </div>

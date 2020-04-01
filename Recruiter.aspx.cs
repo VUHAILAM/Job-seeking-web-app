@@ -16,14 +16,15 @@ namespace JobProject
         protected void Page_Load(object sender, EventArgs e)
         {
             string rname = Session["User"].ToString();
-            //Label1.Text = Session["User"].ToString();
-            SqlConnection con = new SqlConnection(connStr);
+            Label1.Text = Session["User"].ToString();
+            /*SqlConnection con = new SqlConnection(connStr);
             con.Open();
             string sql = "select * from company where username = '" + rname + "'";
             SqlDataAdapter adp = new SqlDataAdapter(sql, con);
             DataSet ds = new DataSet();
             DetailsView1.DataSource = ds;
             DetailsView1.DataBind();
+            con.Close();*/
         }
     }
 }

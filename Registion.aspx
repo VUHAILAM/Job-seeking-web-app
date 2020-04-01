@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Recruiter_register.aspx.cs" Inherits="JobProject.Recruiter_register" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Registion.aspx.cs" Inherits="JobProject.Recruiter_register" %>
 
 <%@ Register Src="~/Company.ascx" TagPrefix="uc1" TagName="Company" %>
 <%@ Register Src="~/Profile.ascx" TagPrefix="uc1" TagName="Profile1" %>

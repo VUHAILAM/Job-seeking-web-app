@@ -73,10 +73,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\w3.css" />
+    <Content Include="Post_job.aspx" />
     <Content Include="Profile.ascx" />
     <Content Include="Recruiter.aspx" />
-    <Content Include="Recruiter_Login.aspx" />
-    <Content Include="Recruiter_register.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Registion.aspx" />
+    <Content Include="Search_Job.aspx" />
     <Content Include="SignOut.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -123,6 +125,13 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="Post_job.aspx.cs">
+      <DependentUpon>Post_job.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Post_job.aspx.designer.cs">
+      <DependentUpon>Post_job.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Profile.ascx.cs">
       <DependentUpon>Profile.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -138,19 +147,26 @@
     <Compile Include="Recruiter.aspx.designer.cs">
       <DependentUpon>Recruiter.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Recruiter_Login.aspx.cs">
-      <DependentUpon>Recruiter_Login.aspx</DependentUpon>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Recruiter_Login.aspx.designer.cs">
-      <DependentUpon>Recruiter_Login.aspx</DependentUpon>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Recruiter_register.aspx.cs">
-      <DependentUpon>Recruiter_register.aspx</DependentUpon>
+    <Compile Include="Registion.aspx.cs">
+      <DependentUpon>Registion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Recruiter_register.aspx.designer.cs">
-      <DependentUpon>Recruiter_register.aspx</DependentUpon>
+    <Compile Include="Registion.aspx.designer.cs">
+      <DependentUpon>Registion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Search_Job.aspx.cs">
+      <DependentUpon>Search_Job.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search_Job.aspx.designer.cs">
+      <DependentUpon>Search_Job.aspx</DependentUpon>
     </Compile>
     <Compile Include="SignOut.aspx.cs">
       <DependentUpon>SignOut.aspx</DependentUpon>
