@@ -48,6 +48,9 @@ namespace JobProject
                         Response.Redirect("~/Recruiter.aspx");
                     } else if(dt.Rows[i]["role"].ToString() == "seeker")
                     {
+                        int cid = 0;
+                        cid = getCid(Username);
+                        Session.Add("Cid", cid);
                         Response.Redirect("~/Default.aspx");
                     }
                 } else
@@ -57,6 +60,19 @@ namespace JobProject
                     Label1.ForeColor = System.Drawing.Color.Red;
                 }
             }
+        }
+
+        public int getCid(string UserName)
+        {
+            SqlConnection con = new SqlConnection(connStr);
+            con.Open();
+            int res = 0;
+            string sql = "select candidate_id from candidate where username = '" + UserName + "'";
+            SqlDataAdapter adp = new SqlDataAdapter(sql, con);
+            DataSet ds = new DataSet();
+            adp.Fill(ds);
+            res = Convert.ToInt32(ds.Tables[0].Rows[0]["candidate_id"].ToString());
+            return res;
         }
     }
 }

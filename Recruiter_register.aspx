@@ -1,11 +1,27 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Recruiter_register.aspx.cs" Inherits="JobProject.Recruiter_register" %>
+
+<%@ Register Src="~/Company.ascx" TagPrefix="uc1" TagName="Company" %>
+<%@ Register Src="~/Profile.ascx" TagPrefix="uc1" TagName="Profile1" %>
+
+
+
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+            height: 34px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <form>
-        <p style="text-align:center"><asp:Label ID="Label1" runat="server" Font-Bold ="true" Font-Size="Large" ForeColor="#E46115" Text="Login Detail" Font-Underline="true"></asp:Label></p>
+    
+        <div class ="w3-content" style ="max-width:600px">
+        <div class ="w3-container w3-card-2 w3-indigo">
+            <h1>Registration</h1>
+        </div>
         <br />
-            <table style="text-align:center">
+            <table class="w3-table">
             <tr>
                 <td>Username</td>
                 <td><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
@@ -15,23 +31,17 @@
             <tr>
                 <td>Password</td>
                 <td><asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox></td>
+                <td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Enter password" ControlToValidate="TextBox2"></asp:RequiredFieldValidator></td>
             </tr>
             <tr>
-                <td>Confirm Password</td>
-                <td><asp:TextBox ID="TextBox3" runat="server" TextMode="Password"></asp:TextBox></td>
-                    <td><asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBox2" ErrorMessage="Password not match" ControlToValidate="TextBox3"></asp:CompareValidator>
+                <td class="auto-style1">Confirm Password</td>
+                <td class="auto-style1"><asp:TextBox ID="TextBox3" runat="server" TextMode="Password"></asp:TextBox></td>
+                    <td class="auto-style1"><asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBox2" ErrorMessage="Password not match" ControlToValidate="TextBox3"></asp:CompareValidator>
                 </td>
             </tr>
-            <tr>
-                <td>Security Question</td>
-                <td><asp:DropDownList ID="DropDownList1" runat="server" Width="131px"></asp:DropDownList></td>
-            </tr>
-            <tr>
-                <td>Answer</td>
-                <td><asp:TextBox ID="TextBox4" runat="server"></asp:TextBox></td>
-            </tr>
         </table>
-        <br />
+        <!--<br />
         <p style="text-align:center"><asp:Label ID="Label2" runat="server" Font-Bold ="true" Font-Size="Large" ForeColor="#E46115" Text="Company Detail" Font-Underline="true"></asp:Label></p>
         <table style="text-align:center">
             <tr>
@@ -58,9 +68,15 @@
                 <td>Emaill</td>
                 <td><asp:TextBox ID="TextBox10" runat="server" TextMode="Email"></asp:TextBox></td>
             </tr>
-        </table>
+        </table>-->
+        
         <br />
-        <asp:Button ID="Button1" runat="server" Text="Create Profile" Font-Bold="True" OnClick="Button1_Click" />
-    </form>
+        <asp:CheckBox ID="CheckBox1" runat="server" Text="Are you Recruiter?" AutoPostBack="True" OnCheckedChanged="CheckBox1_CheckedChanged" />
+        <uc1:Company runat="server" id="Company" />
+        <uc1:Profile1 runat="server" ID="Profile1" />
+        <br />
+        <div align="center"><asp:Button ID="Button1" runat="server" Text="Create Profile" Font-Bold="True" OnClick="Button1_Click" class ="w3-btn w3-teal"/></div>
+        </div>
+    
 
 </asp:Content>

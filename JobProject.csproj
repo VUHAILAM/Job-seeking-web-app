@@ -59,6 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin.aspx" />
+    <Content Include="Admin_login.aspx" />
+    <Content Include="Candidate.aspx" />
+    <Content Include="Company.ascx" />
     <Content Include="Home.aspx" />
     <Content Include="MasterPage.Master" />
     <None Include="Web.Debug.config">
@@ -70,9 +73,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\w3.css" />
+    <Content Include="Profile.ascx" />
     <Content Include="Recruiter.aspx" />
     <Content Include="Recruiter_Login.aspx" />
     <Content Include="Recruiter_register.aspx" />
+    <Content Include="SignOut.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +87,27 @@
     </Compile>
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_login.aspx.cs">
+      <DependentUpon>Admin_login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_login.aspx.designer.cs">
+      <DependentUpon>Admin_login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate.aspx.cs">
+      <DependentUpon>Candidate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate.aspx.designer.cs">
+      <DependentUpon>Candidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company.ascx.cs">
+      <DependentUpon>Company.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company.ascx.designer.cs">
+      <DependentUpon>Company.ascx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -96,6 +122,13 @@
     </Compile>
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.ascx.cs">
+      <DependentUpon>Profile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.ascx.designer.cs">
+      <DependentUpon>Profile.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recruiter.aspx.cs">
@@ -118,6 +151,13 @@
     </Compile>
     <Compile Include="Recruiter_register.aspx.designer.cs">
       <DependentUpon>Recruiter_register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignOut.aspx.cs">
+      <DependentUpon>SignOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignOut.aspx.designer.cs">
+      <DependentUpon>SignOut.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

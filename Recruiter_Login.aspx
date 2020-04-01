@@ -39,7 +39,7 @@
 
                         <div class="w3-group">
                             <label>Pass word</label>
-                            <asp:TextBox ID="TextBox2" class="w3-input" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="TextBox2" class="w3-input" runat="server" TextMode="Password"></asp:TextBox>
                         </div>
 
                         <asp:Label ID="Label1" runat="server" Text="123"></asp:Label>
