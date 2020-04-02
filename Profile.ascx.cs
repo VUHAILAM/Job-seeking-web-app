@@ -18,8 +18,9 @@ namespace JobProject
             if (!IsPostBack)
             {
                 que();
+                Calendar1.SelectedDate = DateTime.Now;
             }
-            Calendar1.SelectedDate = DateTime.Now;
+            
         }
 
         public void que()
