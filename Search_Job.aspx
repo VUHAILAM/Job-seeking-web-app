@@ -18,7 +18,7 @@
 
             <tr>
                 <td>Post</td>
-                <td><asp:TextBox ID="TextBox3" runat="server"></asp:TextBox></td>
+                <td><asp:TextBox ID="TextBox3" runat="server" TextMode="MultiLine"></asp:TextBox></td>
             </tr>
             <tr>
                 <td>Expected Salary</td>

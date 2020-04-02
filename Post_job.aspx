@@ -9,7 +9,7 @@
         </tr>
         <tr>
             <td>Post</td>
-            <td><asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></td>
+            <td><asp:TextBox ID="TextBox2" runat="server" TextMode="MultiLine"></asp:TextBox></td>
         </tr>
         <tr>
             <td>Category</td>
