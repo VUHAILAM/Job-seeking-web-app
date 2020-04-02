@@ -8,7 +8,7 @@
                 <h2>Welcome to Admin Page <asp:Label ID="Label1" runat="server" Text="Label" Font-Bold="True" Font-Italic="True"></asp:Label></h2>
             </td>
             <td>
-                <asp:LinkButton ID="LinkButton1" runat="server">Log out</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/SignOut.aspx">Log out</asp:LinkButton>
             </td>
         </tr>
     </table>

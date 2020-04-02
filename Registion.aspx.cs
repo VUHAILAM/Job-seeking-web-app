@@ -16,8 +16,11 @@ namespace JobProject
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            Company.Visible = false;
-            Profile1.Visible = true;
+            if (!IsPostBack)
+            {
+                Company.Visible = false;
+                Profile1.Visible = true;
+            }
         }
 
         
@@ -26,19 +29,19 @@ namespace JobProject
             SqlConnection con = new SqlConnection(connStr);
             con.Open();
             string role = "seeker";
-            if(Company.Visible == true)
+            if (Company.Visible == true)
             {
                 role = "recruiter";
             }
+            else role = "seeker";
             string sql1 = "insert into account (username,password,role) values('" + TextBox1.Text + "','" + TextBox2.Text + "','"+role+"')";
             SqlCommand cmd2 = new SqlCommand(sql1, con);
             cmd2.ExecuteNonQuery();
             con.Close();
-            if (Company.Visible == true)
+            if (Company.Visible == true && Profile1.Visible == false)
             {
                 Company.executeData(TextBox1.Text);
-            }
-            if(Profile1.Visible == true)
+            } else if(Profile1.Visible == true && Company.Visible == false)
             {
                 Profile1.executeData(TextBox1.Text);
             }

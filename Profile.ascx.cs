@@ -19,6 +19,7 @@ namespace JobProject
             {
                 que();
             }
+            Calendar1.SelectedDate = DateTime.Now;
         }
 
         public void que()
@@ -53,15 +54,16 @@ namespace JobProject
             {
                 gndr = RadioButton3.Text;
             }
-            string sql = "insert into candidate (username, que_id, ans, first_name, candidate_addrs, gender, dob, contact_no, email_id)values ('"+user+"','" + DropDownList1.SelectedValue + "','" + TextBox5.Text + "','" + TextBox1.Text +"','" + TextBox2.Text + "','" + gndr + "','" + Calendar1.SelectedDate.ToString()+ "','" + TextBox3.Text + "','"+TextBox4.Text+"')";
+            string sql = "insert into candidate (username, que_id, ans, first_name, candidate_addrs, gender, dob, contact_no, email_id)values ('"+user+"','" + DropDownList1.SelectedValue + "','" + TextBox5.Text + "','" + TextBox1.Text +"','" + TextBox2.Text + "','" + gndr + "',CONVERT(datetime, N'"+ Calendar1.SelectedDate.ToString()+"',121),'" + TextBox3.Text + "','"+TextBox4.Text+"')";
             SqlCommand cmd = new SqlCommand(sql, con);
             int i = cmd.ExecuteNonQuery();
-            if (i > 0)
-            {
-                //Session["js"] = TextBox1.Text;
+             if (i > 0)
+             {
+                    //Session["js"] = TextBox1.Text;
 
-                Response.Write("<script> alert('Record saved Successfuly')</script>");
-            }
+               Response.Write("<script> alert('Record saved Successfuly')</script>");
+             }
+            
             con.Close();
         }
     }
