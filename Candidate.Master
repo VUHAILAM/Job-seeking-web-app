@@ -22,7 +22,7 @@
                 <a href="Search_Job.aspx">Search Jobs</a>
                 <a href="Candidate.aspx">Your Profile</a>
                 <a href="#">About us</a>
-                <a href="Sign_out.aspx">Sign out</a>
+                <a href="SignOut.aspx">Sign out</a>
                 &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a>
       <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></a>

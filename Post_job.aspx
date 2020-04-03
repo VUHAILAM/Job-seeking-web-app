@@ -5,11 +5,11 @@
     <center><table class="w3-table">
         <tr>
             <td>Job Title</td>
-            <td><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
+            <td><asp:TextBox ID="TextBox1" runat="server" Width="343px"></asp:TextBox></td>
         </tr>
         <tr>
             <td>Post</td>
-            <td><asp:TextBox ID="TextBox2" runat="server" TextMode="MultiLine"></asp:TextBox></td>
+            <td><asp:TextBox ID="TextBox2" runat="server" TextMode="MultiLine" Height="191px" Width="350px"></asp:TextBox></td>
         </tr>
         <tr>
             <td>Category</td>
@@ -34,6 +34,10 @@
         <tr>
             <td>Basic Requirement</td>
             <td><asp:TextBox ID="TextBox4" runat="server" TextMode="MultiLine"></asp:TextBox></td>
+        </tr>
+        <tr>
+            <td>Salary</td>
+            <td>Min:<asp:TextBox ID="TextBox5" runat="server" TextMode="Number"></asp:TextBox> Max: <asp:TextBox ID="TextBox6" runat="server" TextMode="Number"></asp:TextBox> $</td>
         </tr>
         <tr>
             <td><asp:Button ID="Button1" runat="server" Text="Post" class="w3-btn w3-teal" OnClick="Button1_Click"></asp:Button></td>

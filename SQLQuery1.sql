@@ -79,7 +79,7 @@ create table job_post (
 	username varchar(50),
 	job_title nvarchar(300),
 	area_id int,
-	post nvarchar(300),
+	post nvarchar(MAX),
 	no_vacancy numeric,
 	startdate datetime,
 	end_date datetime,
@@ -114,9 +114,14 @@ create table selected_candidate (
 	candidate_id int,
 	jobpost_id int
 )
-alter table job_post add username varchar(50)
+alter table job_post alter column post nvarchar(MAX)
 
 select * from company
 
 select * from account
 
+select jobpost_id, job_title, company_name, account.username from job_post join account on job_post.username = account.username
+join company on company.username = account.username
+
+select jobpost_id, job_title, company_name, account.username from job_post join account on job_post.username = account.username join company on company.username = account.username
+where job_title LIKE '%Data%' and company_name LIKE '%%' and area_id ='6' 

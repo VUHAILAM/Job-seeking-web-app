@@ -2,16 +2,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" PageSize="5" OnPageIndexChanging="GridView1_PageIndexChanging" OnSelectedIndexChanging="GridView1_SelectedIndexChanging">
+    <center><div>
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" PageSize="5" OnPageIndexChanging="GridView1_PageIndexChanging" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" Height="230px" Width="965px">
         <Columns>
             <asp:BoundField DataField="jobpost_id" Visible="False" />
             <asp:BoundField DataField="job_title" HeaderText="Title" />
             <asp:BoundField DataField="company_name" HeaderText="Company" />
-            <asp:BoundField DataField="post" HeaderText="Post" />
-            <asp:BoundField DataField="skillis_req" HeaderText="Skills" />
-            <asp:BoundField DataField="edu_req" HeaderText="Education" />
-            <asp:BoundField DataField="basic_req" HeaderText="Basic Requirements" />
+            <asp:BoundField DataField="username" HeaderText="Poster" />
+            <asp:ButtonField ButtonType="Button" Text="View" ControlStyle-CssClass="w3-btn w3-teal">
+<ControlStyle CssClass="w3-btn w3-teal"></ControlStyle>
+            </asp:ButtonField>
         </Columns>
         <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
         <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
@@ -24,5 +24,5 @@
         <SortedDescendingHeaderStyle BackColor="#93451F" />
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
-</div>
+</div></center>
 </asp:Content>

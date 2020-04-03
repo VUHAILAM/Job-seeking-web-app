@@ -18,6 +18,13 @@ namespace JobProject
             if(!IsPostBack)
             loadCategory();
             loadArea();
+            string user = "";
+            user = Session["User"].ToString();     
+            if (user != "recruiter")
+            {
+                Button1.Visible = false;
+            }
+            else Button1.Visible = true;
         }
         public void loadCategory()
         {
@@ -31,8 +38,9 @@ namespace JobProject
             DropDownList1.DataSource = ds.Tables[0];
             DropDownList1.DataTextField = "category_name";
             DropDownList1.DataValueField = "category_id";
+
             DropDownList1.DataBind();
-            
+            DropDownList1.Items.Insert(0, new ListItem("select", ""));
 
             con.Close();
         }
@@ -50,8 +58,8 @@ namespace JobProject
             DropDownList2.DataTextField = "area_name";
             DropDownList2.DataValueField = "area_id";
             DropDownList2.DataBind();
-            
 
+            DropDownList2.Items.Insert(0, new ListItem("select", ""));
             con.Close();
 
         }
@@ -60,9 +68,10 @@ namespace JobProject
             SqlConnection con = new SqlConnection(connStr);
             con.Open();
             string user = Session["User"].ToString();
-            string sql = "insert into job_post(job_title, area_id, post, skillis_req, edu_req, basic_req, username) values ('"
+            string sql = "insert into job_post(job_title, area_id, post, skillis_req, edu_req, basic_req, username, salary_min, salary_max) values ('"
                 +TextBox1.Text+"','" + DropDownList2.SelectedValue + "','" 
-                + TextBox2.Text + "','" +TextBox3.Text+"','"+DropDownList3.SelectedValue+"','"+TextBox4.Text+"','"+user+"')";
+                + TextBox2.Text + "','" +TextBox3.Text+"','"+DropDownList3.SelectedValue+"','"+TextBox4.Text+"','"+user+"','"
+                +TextBox5.Text+"','"+TextBox6.Text+"')";
             SqlCommand cmd = new SqlCommand(sql, con);
             if(cmd.ExecuteNonQuery()>0)
             {
@@ -74,6 +83,23 @@ namespace JobProject
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             loadArea();
+        }
+
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            if (Session.Count != 0)
+            {
+                if (Session["role"] == "recruiter")
+                {
+                    this.MasterPageFile = "Recruiter.Master";
+                }
+                else if (Session["role"] == "seeker")
+                {
+                    this.MasterPageFile = "Candidate.Master";
+                }
+
+
+            }
         }
     }
 }

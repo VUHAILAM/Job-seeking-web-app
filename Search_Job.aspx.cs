@@ -15,9 +15,13 @@ namespace JobProject
         string connStr = WebConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString.ToString();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
-             loadCategory();
-            loadArea(DropDownList1.SelectedValue);
+            if (!IsPostBack)
+            {
+                loadCategory();
+                loadArea(DropDownList1.SelectedValue);
+                TextBox1.Text = "0";
+                TextBox2.Text = long.MaxValue.ToString();
+            }
             loadData();
         }
         public void loadCategory()
@@ -33,7 +37,7 @@ namespace JobProject
             DropDownList1.DataTextField = "category_name";
             DropDownList1.DataValueField = "category_id";
             DropDownList1.DataBind();
-            
+            DropDownList1.Items.Insert(0, new ListItem("select", ""));
 
             con.Close();
         }
@@ -51,7 +55,7 @@ namespace JobProject
             DropDownList2.DataTextField = "area_name";
             DropDownList2.DataValueField = "area_id";
             DropDownList2.DataBind();
-            
+            DropDownList2.Items.Insert(0, new ListItem("select", ""));
 
             con.Close();
 
@@ -60,8 +64,7 @@ namespace JobProject
         {
             SqlConnection con = new SqlConnection(connStr);
             con.Open();
-            string sql = "select job_title, company_name, post, skillis_req, edu_req, basic_req from job_post, company" +
-                " where job_post.company_id = company.company_id";
+            string sql = "select jobpost_id, job_title, company_name, account.username from job_post join account on job_post.username = account.username join company on company.username = account.username";
             SqlDataAdapter ad = new SqlDataAdapter(sql, con);
             DataTable tb = new DataTable();
             ad.Fill(tb);
@@ -73,6 +76,38 @@ namespace JobProject
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             loadArea(DropDownList1.SelectedValue);
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(connStr);
+            con.Open();
+            string sql = "select jobpost_id, job_title, company_name, account.username from job_post join account on job_post.username = account.username join company on company.username = account.username"+
+                " where  job_title LIKE '%" + TextBox3.Text + "%' and company_name LIKE '%" + TextBox4.Text+"%' and area_id ='"
+                +DropDownList2.SelectedValue+ "' and salary_min >= "+TextBox1.Text+ "and salary_max <=" +TextBox2.Text;
+            SqlDataAdapter ad = new SqlDataAdapter(sql, con);
+            DataTable tb = new DataTable();
+            ad.Fill(tb);
+            GridView1.DataSource = tb;
+            GridView1.DataBind();
+            con.Close();
+        }
+
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            if (Session.Count != 0)
+            {
+                if (Session["role"] == "recruiter")
+                {
+                    this.MasterPageFile = "Recruiter.Master";
+                }
+                else if (Session["role"] == "seeker")
+                {
+                    this.MasterPageFile = "Candidate.Master";
+                }
+
+
+            }
         }
     }
 }

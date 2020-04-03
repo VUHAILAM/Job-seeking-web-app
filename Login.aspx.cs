@@ -42,6 +42,7 @@ namespace JobProject
                     Session["User"] = Username;
                     if(dt.Rows[i]["role"].ToString() == "admin")
                     {
+                        Session.Add("role", "admin");
                         Response.Redirect("~/Admin.aspx");
                     } else if(dt.Rows[i]["role"].ToString() == "recruiter")
                     {

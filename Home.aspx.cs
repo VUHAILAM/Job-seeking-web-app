@@ -24,8 +24,7 @@ namespace JobProject
         {
             SqlConnection con = new SqlConnection(connStr);
             con.Open();
-            string sql = "select job_title, company_name, post, skillis_req, edu_req, basic_req from job_post, company" +
-                " where job_post.company_id = company.company_id";
+            string sql = "select jobpost_id, job_title, company_name, account.username from job_post join account on job_post.username = account.username join company on company.username = account.username";
             SqlDataAdapter ad = new SqlDataAdapter(sql, con);
             DataTable tb = new DataTable();
             ad.Fill(tb);
@@ -43,6 +42,22 @@ namespace JobProject
         {
             GridView1.PageIndex = e.NewPageIndex;
             loadData();
+        }
+
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            if(Session.Count != 0)
+            {
+                if(Session["role"] == "recruiter")
+                {
+                    this.MasterPageFile = "Recruiter.Master";
+                } else if (Session["role"] == "seeker")
+                {
+                    this.MasterPageFile = "Candidate.Master";
+                }
+
+
+            }
         }
     }
 }
