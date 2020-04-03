@@ -38,7 +38,7 @@ create table candidate (
 	city_id int,
 	gender nvarchar(10),
 	dob datetime,
-	contact_no numeric(10,10),
+	contact_no numeric(18,0),
 	email_id nvarchar(300)
 )
 
@@ -76,7 +76,7 @@ create table job_applied(
 
 create table job_post (
 	jobpost_id int primary key identity(1,1),
-	company_id int,
+	username varchar(50),
 	job_title nvarchar(300),
 	area_id int,
 	post nvarchar(300),
@@ -114,8 +114,9 @@ create table selected_candidate (
 	candidate_id int,
 	jobpost_id int
 )
-alter table job_post alter column post 
+alter table job_post add username varchar(50)
 
 select * from company
 
 select * from account
+

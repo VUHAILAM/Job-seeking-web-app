@@ -18,6 +18,8 @@ namespace JobProject
             loadData();
         }
 
+        
+
         public void loadData()
         {
             SqlConnection con = new SqlConnection(connStr);

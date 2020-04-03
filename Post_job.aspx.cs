@@ -59,9 +59,10 @@ namespace JobProject
         {
             SqlConnection con = new SqlConnection(connStr);
             con.Open();
-            string sql = "insert into job_post(job_title, area_id, post, skillis_req, edu_req, basic_req) values ('"
+            string user = Session["User"].ToString();
+            string sql = "insert into job_post(job_title, area_id, post, skillis_req, edu_req, basic_req, username) values ('"
                 +TextBox1.Text+"','" + DropDownList2.SelectedValue + "','" 
-                + TextBox2.Text + "','" +TextBox3.Text+"','"+DropDownList3.SelectedValue+"','"+TextBox4.Text+"')";
+                + TextBox2.Text + "','" +TextBox3.Text+"','"+DropDownList3.SelectedValue+"','"+TextBox4.Text+"','"+user+"')";
             SqlCommand cmd = new SqlCommand(sql, con);
             if(cmd.ExecuteNonQuery()>0)
             {

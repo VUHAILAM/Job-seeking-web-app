@@ -1,13 +1,13 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="JobProject.MasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Candidate.master.cs" Inherits="JobProject.Candidate1" %>
 
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
     <title></title>
+    <link href="CSS/w3.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="CSS/w3.css" rel="stylesheet" type="text/css"/>
-    <asp:ContentPlaceHolder ID="head" runat="server">
+    <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
@@ -17,17 +17,18 @@
                 <h1 class="w3-jumbo">Jop Top!</h1>
                 <p class="w3-xxlarge">Find your oppotunies, create your future!!</p>
             </header>
-            <div>
-                <ul class="w3-navbar w3-blue w3-large">
-                    <li><a href="Home.aspx">Home</a></li>
-                    <li><a href="Search_Job.aspx">Search</a></li>
-                    <li><a href="Post_job.aspx">Post Job</a></li>
-                    <li><a href="Login.aspx">Log In</a></li>
-                </ul>
+            <div class="w3-topnav w3-red w3-large">
+                <a href="Home.aspx">Home</a>
+                <a href="Search_Job.aspx">Search Jobs</a>
+                <a href="Candidate.aspx">Your Profile</a>
+                <a href="#">About us</a>
+                <a href="Sign_out.aspx">Sign out</a>
+                &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a>
+      <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></a>
             </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-
             <footer class ="w3-container w3-light-grey">
                 <br /> <br />
                 <p style ="text-align:center">

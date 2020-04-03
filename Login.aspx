@@ -19,7 +19,7 @@
                 <ul class="w3-navbar w3-blue w3-large">
                     <li><a href="Home.aspx">Home</a></li>
                     <li><a href="#">Your Profile</a></li>
-                    <li><a href="#">Search Candidates</a></li>
+                    <li><a href="#">Search</a></li>
                     <li><a href="#">Post Job</a></li>
                     <li><a href="#">About us</a></li>
                 </ul>
@@ -42,7 +42,7 @@
                             <asp:TextBox ID="TextBox2" class="w3-input" runat="server" TextMode="Password"></asp:TextBox>
                         </div>
 
-                        <asp:Label ID="Label1" runat="server" Text="123"></asp:Label>
+                        <asp:Label ID="Label1" runat="server"></asp:Label>
                         <br />
                         <asp:Button ID="Button1" class="w3-btn w3-teal" runat="server" Text="Login" OnClick="Button1_Click"/>
                         &nbsp

@@ -15,7 +15,7 @@ namespace JobProject
         string connStr = WebConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString.ToString();
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label1.Visible = false;
+            Label1.Visible = true;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -45,12 +45,14 @@ namespace JobProject
                         Response.Redirect("~/Admin.aspx");
                     } else if(dt.Rows[i]["role"].ToString() == "recruiter")
                     {
+                        Session.Add("role", "recruiter");
                         Response.Redirect("~/Recruiter.aspx");
                     } else if(dt.Rows[i]["role"].ToString() == "seeker")
                     {
                         int cid = 0;
                         cid = getCid(Username);
                         Session.Add("Cid", cid);
+                        Session.Add("role", "seeker");
                         Response.Redirect("~/Candidate.aspx");
                     }
                 } else

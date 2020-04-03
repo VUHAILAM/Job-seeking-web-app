@@ -64,6 +64,8 @@
     <Content Include="Company.ascx" />
     <Content Include="Home.aspx" />
     <Content Include="MasterPage.Master" />
+    <Content Include="Candidate.Master" />
+    <Content Include="Recruiter.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -103,6 +105,13 @@
     </Compile>
     <Compile Include="Candidate.aspx.designer.cs">
       <DependentUpon>Candidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate.Master.cs">
+      <DependentUpon>Candidate.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate.Master.designer.cs">
+      <DependentUpon>Candidate.Master</DependentUpon>
     </Compile>
     <Compile Include="Company.ascx.cs">
       <DependentUpon>Company.ascx</DependentUpon>
@@ -153,6 +162,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Recruiter.Master.cs">
+      <DependentUpon>Recruiter.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recruiter.Master.designer.cs">
+      <DependentUpon>Recruiter.Master</DependentUpon>
     </Compile>
     <Compile Include="Registion.aspx.cs">
       <DependentUpon>Registion.aspx</DependentUpon>

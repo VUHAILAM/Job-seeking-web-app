@@ -11,7 +11,13 @@ namespace JobProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             Label1.Text = Session["User"].ToString();
+        }
+
+        protected void Page_PreInit(Object sender, EventArgs e)
+        {
+            this.MasterPageFile = "Candidate.Master";
         }
     }
 }

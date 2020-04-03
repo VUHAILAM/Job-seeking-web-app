@@ -26,5 +26,10 @@ namespace JobProject
             DetailsView1.DataBind();
             con.Close();*/
         }
+
+        void Page_PreInit(Object sender, EventArgs e)
+        {
+            this.MasterPageFile = "Recruiter.Master";
+        }
     }
 }
