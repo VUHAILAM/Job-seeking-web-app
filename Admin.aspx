@@ -13,7 +13,7 @@
         </tr>
     </table>
     <div style="text-align:center;">
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="username" DataSourceID="SqlDataSource1" AllowPaging="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="username" DataSourceID="SqlDataSource1" AllowPaging="False" Height="446px" Width="944px">
         <Columns>
             <asp:BoundField DataField="username" HeaderText="username" ReadOnly="True" SortExpression="username" />
             <asp:BoundField DataField="password" HeaderText="password" SortExpression="password" />
@@ -32,7 +32,8 @@
         <SortedDescendingCellStyle BackColor="#D6DFDF" />
         <SortedDescendingHeaderStyle BackColor="#002876" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:myConnectionString %>" DeleteCommand="DELETE FROM [account] WHERE [username] = @original_username AND (([password] = @original_password) OR ([password] IS NULL AND @original_password IS NULL)) AND (([role] = @original_role) OR ([role] IS NULL AND @original_role IS NULL))" InsertCommand="INSERT INTO [account] ([username], [password], [role]) VALUES (@username, @password, @role)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [account]" UpdateCommand="UPDATE [account] SET [password] = @password, [role] = @role WHERE [username] = @original_username AND (([password] = @original_password) OR ([password] IS NULL AND @original_password IS NULL)) AND (([role] = @original_role) OR ([role] IS NULL AND @original_role IS NULL))">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:myConnectionString %>" 
+            DeleteCommand="DELETE FROM [account] WHERE [username] = @original_username AND (([password] = @original_password) OR ([password] IS NULL AND @original_password IS NULL)) AND (([role] = @original_role) OR ([role] IS NULL AND @original_role IS NULL))" InsertCommand="INSERT INTO [account] ([username], [password], [role]) VALUES (@username, @password, @role)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [account]" UpdateCommand="UPDATE [account] SET [password] = @password, [role] = @role WHERE [username] = @original_username AND (([password] = @original_password) OR ([password] IS NULL AND @original_password IS NULL)) AND (([role] = @original_role) OR ([role] IS NULL AND @original_role IS NULL))">
             <DeleteParameters>
                 <asp:Parameter Name="original_username" Type="String" />
                 <asp:Parameter Name="original_password" Type="String" />

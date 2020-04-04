@@ -109,5 +109,16 @@ namespace JobProject
 
             }
         }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "view")
+            {
+                int r = Int32.Parse(e.CommandArgument.ToString());
+                string id = GridView1.Rows[r].Cells[0].Text;
+                string url = "Job.aspx?id=" + id;
+                Response.Redirect(url);
+            }
+        }
     }
 }

@@ -19,5 +19,7 @@ namespace JobProject
         {
             this.MasterPageFile = "Candidate.Master";
         }
+
+        
     }
 }

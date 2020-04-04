@@ -125,3 +125,5 @@ join company on company.username = account.username
 
 select jobpost_id, job_title, company_name, account.username from job_post join account on job_post.username = account.username join company on company.username = account.username
 where job_title LIKE '%Data%' and company_name LIKE '%%' and area_id ='6' 
+
+select job_title, post, skillis_req, edu_req, basic_req, salary_max where jobpost_id = 1

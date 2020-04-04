@@ -39,16 +39,16 @@
         <br />
         <br />
         <br />
-        <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False">
+        <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
+                <asp:BoundField DataField="jobpost_id" />
                 <asp:BoundField DataField="job_title" HeaderText="Title" />
                 <asp:BoundField DataField="company_name" HeaderText="Company" />
                 <asp:BoundField DataField="username" HeaderText="Poster" />
-                <asp:ButtonField ButtonType="Button" Text="View">
+                <asp:ButtonField ButtonType="Button" Text="View" CommandName="view">
                 <ControlStyle CssClass="w3-btn w3-teal" />
                 </asp:ButtonField>
-                <asp:BoundField DataField="jobpost_id" Visible="False" />
             </Columns>
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

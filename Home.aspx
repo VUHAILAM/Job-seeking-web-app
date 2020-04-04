@@ -3,13 +3,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <center><div>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" PageSize="5" OnPageIndexChanging="GridView1_PageIndexChanging" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" Height="230px" Width="965px">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" PageSize="5" OnPageIndexChanging="GridView1_PageIndexChanging" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" Height="230px" Width="965px" OnRowCommand="GridView1_RowCommand" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
         <Columns>
-            <asp:BoundField DataField="jobpost_id" Visible="False" />
+            <asp:BoundField DataField="jobpost_id" />
             <asp:BoundField DataField="job_title" HeaderText="Title" />
             <asp:BoundField DataField="company_name" HeaderText="Company" />
             <asp:BoundField DataField="username" HeaderText="Poster" />
-            <asp:ButtonField ButtonType="Button" Text="View" ControlStyle-CssClass="w3-btn w3-teal">
+            <asp:ButtonField ButtonType="Button" Text="View" ControlStyle-CssClass="w3-btn w3-teal" CommandName="view">
 <ControlStyle CssClass="w3-btn w3-teal"></ControlStyle>
             </asp:ButtonField>
         </Columns>
